@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ag Streaming TV - Access Your Content</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(135deg, #2a005c, #007bff, #00c6ff); /* Dynamic Gradient Background */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite; /* Animation for the background */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .landing-container {
+            background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent dark background */
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(8px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .action-button {
+            display: inline-block;
+            background-color: #00e676; /* Bright green for call to action */
+            color: #2c3e50;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin: 10px; /* Space between buttons if you add more */
+        }
+
+        .action-button:hover {
+            background-color: #00c853;
+            transform: translateY(-3px);
+        }
+
+        .secondary-link {
+            display: inline-block;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .secondary-link:hover {
+            opacity: 1;
+        }
+
+        /* --- For Random Password Generator (Informational Only - Not Secure for Accounts) --- */
+        .password-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+        #generatedPassword {
+            background-color: #333;
+            color: #00e676;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            margin-top: 10px;
+            word-break: break-all; /* Ensures long passwords wrap */
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Welcome to Ag Streaming TV!</h1>
+        <p>Get instant access to exclusive agricultural content, tutorials, and live events. Choose your path below:</p>
+
+        <a href="https://your-payment-provider-link.com/agstreamingsubscribe" class="action-button" target="_blank" rel="noopener noreferrer">
+            Subscribe Now!
+        </a>
+
+        <a href="https://your.agstreamingtv.app/login" class="action-button" target="_blank" rel="noopener noreferrer">
+            Existing User Login
+        </a>
+
+        <div class="password-section">
+            <h2>Need a Strong Password?</h2>
+            <p style="font-size:0.9em; line-height: 1.4; color: rgba(255,255,255,0.7);">
+                Click the button below to generate a strong password for your personal use. **Important: This is generated in your browser and not stored or linked to any account on our end. You MUST save it securely yourself.**
+            </p>
+            <button class="action-button" onclick="generatePassword()">Generate New Password</button>
+            <div id="generatedPassword"></div>
+        </div>
+
+        <a href="https://dreno25.github.io/agstreamintv-/" class="secondary-link">
+            Back to Main Device Links
+        </a>
+    </div>
+
+    <script>
+        function generatePassword() {
+            const length = 12; // Password length
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+            let password = "";
+            for (let i = 0, n = charset.length; i < length; ++i) {
+                password += charset.charAt(Math.floor(Math.random() * n));
+            }
+            document.getElementById("generatedPassword").textContent = password;
+        }
+    </script>
+</body>
+</html>
